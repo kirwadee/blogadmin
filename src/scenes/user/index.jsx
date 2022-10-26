@@ -14,7 +14,9 @@ const UserView = () => {
   //  GET USER
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(`/users/${id}`);
+      const res = await axios.get(
+        `https://personofinterestadmin.herokuapp.com/api/users/${id}`
+      );
       setUser(res.data);
     };
     getUser();

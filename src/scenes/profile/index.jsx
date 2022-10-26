@@ -13,7 +13,9 @@ const ProfileUpdate = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(`/users/profile/${id}`);
+      const res = await axios.get(
+        `https://personofinterestadmin.herokuapp.com/api/users/profile/${id}`
+      );
       setUsername(res.data.username);
       setEmail(res.data.email);
     };

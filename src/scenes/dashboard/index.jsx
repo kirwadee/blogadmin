@@ -60,11 +60,15 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/posts");
+        const res = await axios.get(
+          "https://personofinterestadmin.herokuapp.com/api/posts"
+        );
         setPosts(res.data);
 
         //FETCH USERS
-        const resp = await axios.get("/users");
+        const resp = await axios.get(
+          "https://personofinterestadmin.herokuapp.com/api/users"
+        );
         setUsers(resp.data);
       } catch (err) {
         console.log(err);

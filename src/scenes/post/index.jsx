@@ -44,11 +44,15 @@ const PostView = () => {
     const fetchPostDataAndUserData = async () => {
       try {
         //get the particular post
-        const res = await axios.get(`/posts/${postId}`);
+        const res = await axios.get(
+          `https://personofinterestadmin.herokuapp.com/api/posts/${postId}`
+        );
         setPost(res.data);
 
         //fetch the user who posted this post also
-        const userRes = await axios.get(`/users/profile/${res.data.userId}`);
+        const userRes = await axios.get(
+          `https://personofinterestadmin.herokuapp.com/api/users/profile/${res.data.userId}`
+        );
         setUser(userRes.data);
       } catch (err) {
         console.log(err);
@@ -62,7 +66,9 @@ const PostView = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${postId}`);
+      await axios.delete(
+        `https://personofinterestadmin.herokuapp.com/api/posts/${postId}`
+      );
       navigate("/");
     } catch (err) {
       console.log(err);

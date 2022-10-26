@@ -97,11 +97,14 @@ const Write = () => {
               desc: desc,
             }
           )
-        : await axios.post("/posts", {
-            title: title,
-            desc: desc,
-            img: img,
-          });
+        : await axios.post(
+            "https://personofinterestadmin.herokuapp.com/api/posts",
+            {
+              title: title,
+              desc: desc,
+              img: img,
+            }
+          );
 
       navigate("/");
     } catch (error) {
