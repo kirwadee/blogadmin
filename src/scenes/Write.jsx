@@ -90,10 +90,13 @@ const Write = () => {
     e.preventDefault();
     try {
       state
-        ? await axios.put(`/posts/${state._id}`, {
-            title: title,
-            desc: desc,
-          })
+        ? await axios.put(
+            `https://personofinterestadmin.herokuapp.com/api/posts/${state._id}`,
+            {
+              title: title,
+              desc: desc,
+            }
+          )
         : await axios.post("/posts", {
             title: title,
             desc: desc,
@@ -112,7 +115,7 @@ const Write = () => {
     if (!currentUser) {
       navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   return (
     <WritePostContainer>

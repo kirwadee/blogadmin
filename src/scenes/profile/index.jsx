@@ -10,7 +10,6 @@ const ProfileUpdate = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
 
   useEffect(() => {
     const getUser = async () => {

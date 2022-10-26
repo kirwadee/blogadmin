@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Avatar,
   Box,
   Divider,
   Drawer,
@@ -10,10 +9,8 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  useTheme,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -96,9 +93,6 @@ const drawerItems = (
 const drawerWidth = 240;
 
 const Sidebarr = ({ mobileOpen, handleDrawerToggle }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
   const { currentUser } = useSelector((state) => state.auth);
 
   return (

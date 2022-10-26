@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import { tokens } from "../../theme";
@@ -17,13 +17,15 @@ const Team = () => {
     if (!currentUser) {
       navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
   // GET USERS FROM SERVER
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const getAllUsers = async () => {
       try {
-        const res = await axios.get("/users");
+        const res = await axios.get(
+          "https://personofinterestadmin.herokuapp.com/api/users"
+        );
         setUsers(res.data);
       } catch (err) {
         console.log(err);

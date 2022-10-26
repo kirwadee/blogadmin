@@ -52,7 +52,7 @@ const Dashboard = () => {
     if (!currentUser) {
       navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   // FETCHING LATEST 5 POSTS AND LATEST 5 USERS
   const [posts, setPosts] = useState([]);

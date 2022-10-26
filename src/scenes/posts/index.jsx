@@ -14,13 +14,15 @@ const Posts = () => {
     if (!currentUser) {
       navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
   // FETCHING POSTS
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/posts");
+        const res = await axios.get(
+          "https://personofinterestadmin.herokuapp.com/api/posts"
+        );
         setPosts(res.data);
       } catch (err) {
         console.log(err);

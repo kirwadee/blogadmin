@@ -77,7 +77,7 @@ const PostView = () => {
     if (!currentUser) {
       navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   return (
     <SinglePostContainer>
